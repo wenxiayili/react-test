@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
