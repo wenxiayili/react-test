@@ -1,0 +1,10 @@
+@import 'var.scss';
+
+@function rpx($style) {
+    @return $style + rem;
+}
+
+body {
+    font-size: rpx(30);
+    // background-color: $red;
+}
