@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, } from 'react-router-dom';
 
-import { Simple } from './pages/example/simple';
+import App from './routers/routers';
+
 
 import './scripts/rem';
 
@@ -9,6 +11,6 @@ import './styles/reset.css';
 import './styles/init.scss';
 
 ReactDOM.render(
-  <Simple />,
+  <App />,
   document.getElementById('app'),
 );
