@@ -4,11 +4,19 @@ import { Provider, useStore } from 'reto';
 
 // import style
 import './simple.scss';
+import { useEffect } from 'react';
 
 function FooStore() {
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(1);
+    useEffect(() => {
+        console.log('* FooStore', counter);
+    })
     function reset() {
-        setCounter(0);
+        setCounter(counter + 1);
+        setTimeout(() => {
+            console.log('* FooStore', counter);
+        })
+    
     }
 
     return {
@@ -21,12 +29,12 @@ function FooStore() {
 export function Simple() {
     return (
       <Provider of={FooStore}>
-          <App />
+          <SimpleApp />
       </Provider>
     )
 }
 
-function App() {
+function SimpleApp() {
     const fooStore = useStore(FooStore);
     function changeStore() {
         fooStore.setCounter(fooStore.counter);

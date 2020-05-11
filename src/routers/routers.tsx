@@ -1,21 +1,31 @@
-import React, { Component, } from 'react';
-
-import { BrowserRouter, Route, Switch, } from 'react-router-dom';
 import { Test } from '../pages/test/test';
 import { Simple } from '../pages/example/simple';
+import { Login } from '../pages/login/login';
 
-export default function Routers() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Simple />
-        </Route>
+/**
+ * 
+ */
+const routers = [
+    {
+        path: '/',
+        component: Test,
+        exact: true,
+        isRequiredLogin: true,
+        routes: []
+    },
+    {
+        path: '/simple',
+        component: Simple,
+        exact: true,
+        isRequiredLogin: true,
+        routes: [],
+    },
+    {
+        path: '/login',
+        component: Login,
+        isRequiredLogin: false,
+        routes: []
+    }
+];
 
-        <Route path="/test">
-          <Test />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  );
-}
+export default routers;
